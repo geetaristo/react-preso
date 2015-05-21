@@ -1,5 +1,6 @@
 # React, Flux and React-Native
-My presentation on React, Flux and React-Native
+A presentation on React, Flux and React-Native
+
 I've created two prototypes here...
 * **react-flux-web** a presentation built with React and Flux
 * **luttrellMusic** a music player that plays my music. *Or you can substitute your own JSON y'all*
@@ -12,8 +13,9 @@ I've created two prototypes here...
 ## Flux
 * Unidirectional Data Flow
 * What? You mean I don’t have magically bound variables?
+* Christian Alfoni's pretty good boiler plate project https://github.com/christianalfoni/flux-react
 
-** One real cool thing real quick **
+*One real cool thing real quick* 
 Async Display Kit https://code.facebook.com/projects/1475518869403439/asyncdisplaykit/
 
 ## React Native
@@ -30,7 +32,8 @@ Async Display Kit https://code.facebook.com/projects/1475518869403439/asyncdispl
 
 ## Questions?
 * How fast is React?
-* What about Physics engine?  
-* What about Sprite Kit, Watch Kit, Health Kit?
+* Isn't this a lot of boiler plate?
+* What about Physics engine?
+* What about Sprite Kit, Watch Kit, Health Kit... all of those KITS?
 * Isn’t this the same scenario I have to deal with using PhoneGap?
 * How does this compare with Titanium or Native Script?
