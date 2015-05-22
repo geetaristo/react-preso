@@ -33,8 +33,6 @@ var SongList = React.createClass({
       playing: false,
       dataSource: new ListView.DataSource({
         rowHasChanged: (r1, r2) => r1 !== r2
-//          rowHasChanged: (r1, r2) => 
-//          r1["nowPlaying"] !== r2["nowPlaying"]
       })
     }
   },
@@ -45,35 +43,29 @@ var SongList = React.createClass({
         dataSource: this.state.dataSource.cloneWithRows(this.album.songs)
     })
   },
-//  shouldComponentUpdate: function(nextProps, nextState) {
-//    return true // always return true. For some reason 
-//  },
   playSong: function (song){
-      var self = this
-      
-      MusicPlayer.playSong(song.title, song.source,
-            function(events){ // this is when the track has been loaed
-                console.log('started playing ' + events)
-                self.setState({
-                    currentTitle: events,
-                    playing: true,
-                    dataSource: self.state.dataSource
+    var self = this
 
-                })
-              }, 
-             function(events){ // this is when it's done
-//                console.log('done playing ' + events)
-//                self.setState({
-//                    currentTitle: '',
-//                    playing: false,
-//                    dataSource: self.state.dataSource
-//                })
-             })
-    
-      
+    MusicPlayer.playSong(song.title, song.source,
+        function(events){ // this is when the track has been loaed
+            console.log('started playing ' + events)
+            self.setState({
+                currentTitle: events,
+                playing: true,
+                dataSource: self.state.dataSource
+
+            })
+          }, 
+         function(events){ // this is when it's done
+            console.log('done playing ' + events)
+            self.setState({
+                currentTitle: '',
+                playing: false,
+                dataSource: self.state.dataSource
+            })
+         })
     for(songIdx in this.album.songs){
         if(song.title == this.album.songs[songIdx].title){
-            console.log("found one that seems to be true... " + this.album.songs[songIdx].title)
             this.album.songs[songIdx].nowPlaying = true
         }
         else {
@@ -81,19 +73,8 @@ var SongList = React.createClass({
         }
     }
       
-    console.log('what the hell?')
-//    this.setState({
-//        currentTitle: song.title,
-//        playing: true,
-//        dataSource: this.state.dataSource
-//
-//    })
   },
   renderSong: function(song) {
-      console.log('rendering song')
-//    var nowPlaying = (song.title == this.state.currentTitle) ?
-//            <Image source={ audioImg }  style={ styles.nowPlaying}/> : <View />
-//
     var nowPlaying = 
         song.nowPlaying ? <Image source={ audioImg }  style={ styles.nowPlaying}/> : <View />
 
@@ -117,13 +98,9 @@ var SongList = React.createClass({
     )
   },
   renderHeader: function(){
-      return (
-          <View />
-          )
+      return (<Text></Text>)
   },
   render: function() {
-      console.log('re-rendering, currentTitle:' + this.state.currentTitle)
-      
     return (
         <ListView
             dataSource={this.state.dataSource}

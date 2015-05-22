@@ -18,7 +18,7 @@ var {
   NavigatorIOS,
   StatusBarIOS,
   TouchableHighlight
-  } = React;
+  } = React
 
 
 var MusicList = React.createClass({
@@ -45,7 +45,7 @@ var MusicList = React.createClass({
       title: `${album.title}`,
       component: AlbumView,
       passProps: { album }
-    });
+    })
   },
   renderLoadingView: function() {
     return (
@@ -54,7 +54,7 @@ var MusicList = React.createClass({
           Loading music...
         </Text>
       </View>
-    );
+    )
   },
   renderAlbum: function(album) {
     return (
@@ -79,25 +79,21 @@ var MusicList = React.createClass({
           </View>
         </TouchableHighlight>
       </View>
-    );
+    )
   },
   render: function() {
     StatusBarIOS.setStyle(1) // Set the color of the StatusBar text to white
     
-    if (!this.state.loaded) {
-      return this.renderLoadingView();
-    }
+    if (!this.state.loaded) {  return this.renderLoadingView()  }
 
     return (
-        <View style={ styles.container }>
             <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderAlbum}
             />
-        </View>
-    );
+    )
   }
-});
+})
 
 var styles = StyleSheet.create({
   row: {
@@ -130,23 +126,8 @@ var styles = StyleSheet.create({
     backgroundColor: '#F2F2F2',
     height: 1 / PixelRatio.get(),
     marginLeft: 4
-  },
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  listContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    backgroundColor: '#F5FCFF',
-    paddingTop:0,
-    marginTop:0
   }
-});
 
-module.exports = MusicList;
+})
+
+module.exports = MusicList

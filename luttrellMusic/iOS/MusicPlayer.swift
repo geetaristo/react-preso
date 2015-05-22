@@ -9,7 +9,6 @@
 import Foundation
 import AVFoundation
 
-
 @objc(MusicPlayer)
 class MusicPlayer : NSObject, AVAudioPlayerDelegate {
 
@@ -43,10 +42,11 @@ class MusicPlayer : NSObject, AVAudioPlayerDelegate {
       
       println("Received data, preparing to play \(data.length) bytes")
       if let player = self.audioPlayer {
+        player.delegate = self;
         player.prepareToPlay()
         player.play()
         loadedCallback([title])
-        player.delegate = self;
+
       } else {
         println("Error attempting to play file: \(url). Possibly no internet connection")
       }

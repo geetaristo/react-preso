@@ -7,15 +7,15 @@ var {
   Image,
   View,
   PixelRatio
-  } = React;
+  } = React
 
-var albumView = React.createClass({
+var AlbumView = React.createClass({
   render: function(){
     var album = this.props.album
     
     return (
       <View style={ styles.container }>
-        <View style={ styles.topcontainer }>
+        <View>
           <Image
             source={ { uri: album.thumbnail } }
             style={ styles.albumImage }
@@ -33,28 +33,18 @@ var albumView = React.createClass({
 
         </View>
       </View>
-    );
+    )
   }
-});
+})
 
 var styles = StyleSheet.create({
   container: {
-//    flex: 1,
+    flex: 1,
     backgroundColor: '#fff',
-    paddingTop: 64,
+    paddingTop: 64
   },
-  topcontainer: {
-// nothing seems to control the actual height of this correctly.
-//      height:200 / PixelRatio.get()
-  }, 
   textContainer: {
-    flex: 1,
     marginLeft: 10
-  },
-  row: {
-    flex: 1,
-    backgroundColor: 'white',
-    flexDirection: 'row'
   },
   albumImage: {
     height: 100,
@@ -66,13 +56,8 @@ var styles = StyleSheet.create({
   albumSummary: {
     color: '#999999',
     fontSize: 12
-  },
-  listContainer: {
-    flex: 1,
-    justifyContent:'flex-start'
-
   }
 
-});
+})
 
-module.exports = albumView;
+module.exports = AlbumView
