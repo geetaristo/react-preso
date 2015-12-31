@@ -1,9 +1,5 @@
 //
-//  luttrellMusic-Bridging-Header.h
-//  luttrellMusic
-//
-//  Created by Michael Luttrell on 5/20/15.
-//  Copyright (c) 2015 Facebook. All rights reserved.
+//  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
 #ifndef luttrellMusic_luttrellMusic_Bridging_Header_h
